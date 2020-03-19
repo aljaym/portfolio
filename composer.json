@@ -27,7 +27,6 @@
         "psy/psysh": "~0.6",
         "vlucas/phpdotenv": "^2.4",
         "wp-cli/wp-cli": "~0.22",
-        "wpackagist-plugin/better-wp-security": "7.*",
         "wpackagist-plugin/custom-post-type-ui": "1.*",
         "wpackagist-plugin/disable-comments": "1.*",
         "wpackagist-plugin/google-analytics-for-wordpress": "7.*",
@@ -35,7 +34,10 @@
         "wpackagist-plugin/user-role-editor": "4.52.*",
         "wpackagist-plugin/wordpress-seo": "9.*",
         "wpackagist-plugin/wp-mail-smtp": "1.*",
-        "wpackagist-plugin/sucuri-scanner": "1.*"
+        "wpackagist-plugin/sucuri-scanner": "1.*",
+        "wpackagist-plugin/advanced-custom-fields": "5.*",
+        "wpackagist-plugin/ajax-load-more": "5.*",
+        "wpackagist-plugin/contact-form-7": "5.*"
     },
     "require-dev": {
         "wpackagist-plugin/debug-bar": "^0.9",

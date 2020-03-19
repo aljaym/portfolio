@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "63edfe999bf05907030c99796817c627",
+    "content-hash": "ec05f6ab2729da902eb4f6a73d537f96",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -2228,16 +2228,16 @@
             "time": "2016-10-25T15:14:00+00:00"
         },
         {
-            "name": "wpackagist-plugin/better-wp-security",
-            "version": "7.6.1",
+            "name": "wpackagist-plugin/advanced-custom-fields",
+            "version": "5.8.8",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/better-wp-security/",
-                "reference": "tags/7.6.1"
+                "url": "https://plugins.svn.wordpress.org/advanced-custom-fields/",
+                "reference": "tags/5.8.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/better-wp-security.7.6.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.5.8.8.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2245,7 +2245,47 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/better-wp-security/"
+            "homepage": "https://wordpress.org/plugins/advanced-custom-fields/"
+        },
+        {
+            "name": "wpackagist-plugin/ajax-load-more",
+            "version": "5.2.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/ajax-load-more/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/ajax-load-more.zip?timestamp=1584115721",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/ajax-load-more/"
+        },
+        {
+            "name": "wpackagist-plugin/contact-form-7",
+            "version": "5.1.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/contact-form-7/",
+                "reference": "tags/5.1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.1.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/contact-form-7/"
         },
         {
             "name": "wpackagist-plugin/custom-post-type-ui",
