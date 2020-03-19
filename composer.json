@@ -8,6 +8,12 @@
             "email": "aljaydeveloper07@gmail.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
@@ -24,7 +30,6 @@
         "wpackagist-plugin/better-wp-security": "7.*",
         "wpackagist-plugin/custom-post-type-ui": "1.*",
         "wpackagist-plugin/disable-comments": "1.*",
-        "wpackagist-plugin/ewww-image-optimizer": "4.*",
         "wpackagist-plugin/google-analytics-for-wordpress": "7.*",
         "wpackagist-plugin/svg-support": "2.*",
         "wpackagist-plugin/user-role-editor": "4.52.*",
@@ -54,13 +59,13 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "cp -r commercial_plugins/* web/wp-content/plugins/ 2>/dev/null || :",
+            "cp -r commercial_plugins/* web/wp-content/plugins/",
             "composer dump-autoload",
             "mkdir -p web/wp-content/themes/project",
             "echo 'Work your magic in the child theme folder: web/wp-content/themes/project'"
         ],
         "post-update-cmd": [
-            "cp -r commercial_plugins/* web/wp-content/plugins/ 2>/dev/null || :",
+            "cp -r commercial_plugins/* web/wp-content/plugins/",
             "composer dump-autoload"
         ]
     }
