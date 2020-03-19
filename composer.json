@@ -1,0 +1,67 @@
+{
+    "name": "aljaymallari/wordpress-boilerplate",
+    "description": "Wordpress package boilerplate for starting Wordpress projects",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Aljay Mallari",
+            "email": "aljaydeveloper07@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "composer/installers": "^1.2",
+        "drupal-composer/preserve-paths": "0.1.*",
+        "johnpbloch/wordpress-core": "4.*",
+        "johnpbloch/wordpress-core-installer": "^1.0",
+        "psy/psysh": "~0.6",
+        "vlucas/phpdotenv": "^2.4",
+        "wp-cli/wp-cli": "~0.22",
+        "wpackagist-plugin/better-wp-security": "7.*",
+        "wpackagist-plugin/custom-post-type-ui": "1.*",
+        "wpackagist-plugin/disable-comments": "1.*",
+        "wpackagist-plugin/ewww-image-optimizer": "4.*",
+        "wpackagist-plugin/google-analytics-for-wordpress": "7.*",
+        "wpackagist-plugin/svg-support": "2.*",
+        "wpackagist-plugin/user-role-editor": "4.52.*",
+        "wpackagist-plugin/wordpress-seo": "9.*",
+        "wpackagist-plugin/wp-mail-smtp": "1.*",
+        "wpackagist-plugin/sucuri-scanner": "1.*"
+    },
+    "require-dev": {
+        "wpackagist-plugin/debug-bar": "^0.9",
+        "wpackagist-plugin/show-current-template": "^0.3.0"
+    },
+    "extra": {
+        "installer-paths": {
+            "web/wp-content/themes/{$name}/": [
+                "type:wordpress-theme"
+            ],
+            "web/wp-content/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ]
+        },
+        "preserve-paths": [
+            "web/wp-config.php",
+            "web/wp-content/uploads",
+            "web/wp-content/themes/project"
+        ],
+        "wordpress-install-dir": "web"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "cp -r commercial_plugins/* web/wp-content/plugins/ 2>/dev/null || :",
+            "composer dump-autoload",
+            "mkdir -p web/wp-content/themes/project",
+            "echo 'Work your magic in the child theme folder: web/wp-content/themes/project'"
+        ],
+        "post-update-cmd": [
+            "cp -r commercial_plugins/* web/wp-content/plugins/ 2>/dev/null || :",
+            "composer dump-autoload"
+        ]
+    }
+}
