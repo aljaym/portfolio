@@ -23,22 +23,13 @@ define( 'DISALLOW_FILE_EDIT', true ); // Disable File Editor - Security > Settin
  *
  * @package WordPress
  */
-require_once(__DIR__ . '/../vendor/autoload.php');
-(new \Dotenv\Dotenv(__DIR__ . '/../'))->load();
+define('DB_NAME', getenv('WORDPRESS_DB_NAME') ?: 'wordpress');
+define('DB_USER', getenv('WORDPRESS_DB_USER') ?: 'wpuser');
+define('DB_PASSWORD', getenv('WORDPRESS_DB_PASSWORD') ?: 'wppass');
+define('DB_HOST', getenv('WORDPRESS_DB_HOST') ?: 'mysql');
 
-$host = getenv('APP_URL');
-
-define('DB_NAME', getenv('DB_DATABASE'));
-define('DB_USER', getenv('DB_USERNAME'));
-define('DB_PASSWORD', getenv('DB_PASSWORD'));
-if (defined('WP_CLI') && WP_CLI) {
-	define('DB_HOST', getenv('DB_HOST_WP_CLI')); // A work around for laradock and wp-cli usage
-} else {
-	define('DB_HOST', getenv('DB_HOST'));
-}
-
-define('WP_HOME', $host);
-define('WP_SITEURL', $host);
+define('WP_HOME', 'http://localhost:8080');
+define('WP_SITEURL', 'http://localhost:8080');
 
 
 /** Turn off automatic updates by default */

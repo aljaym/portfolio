@@ -1,0 +1,63 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: wp-mysql
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wppass
+    volumes:
+      - db_data:/var/lib/mysql
+
+  php:
+    build: ./php
+    container_name: wp-php
+    restart: always
+    volumes:
+      - ./web:/var/www/html
+    depends_on:
+      - mysql
+
+  nginx:
+    image: nginx:latest
+    container_name: wp-nginx
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./web:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+
+  fastapi:
+    build: ./api
+    container_name: fastapi-app
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./api:/app
+    working_dir: /app
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  wpcli:
+    image: wordpress:cli
+    container_name: wp-cli
+    depends_on:
+      - mysql
+      - php
+    volumes:
+      - ./web:/var/www/html
+      - ./wp-init.sh:/wp-init.sh
+    working_dir: /var/www/html
+    entrypoint: ["sh", "/wp-init.sh"]
+
+volumes:
+  db_data:
