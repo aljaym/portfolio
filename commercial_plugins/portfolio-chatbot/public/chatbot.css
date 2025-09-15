@@ -1,0 +1,139 @@
+#chatbot-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+#chatbot-box {
+  width: 340px;
+  height: 460px;
+  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+/* HEADER */
+#chatbot-header {
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  color: white;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbot-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chatbot-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: white;
+  padding: 4px;
+}
+
+.chatbot-title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.chatbot-status {
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+#chatbot-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* MESSAGES */
+#chatbot-messages {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chatbot-message {
+  padding: 10px 14px;
+  border-radius: 14px;
+  max-width: 80%;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chatbot-message.bot {
+  background: #e9f1ff;
+  align-self: flex-start;
+}
+
+.chatbot-message.user {
+  background: #ff5f6d;
+  color: white;
+  align-self: flex-end;
+}
+
+/* INPUT */
+#chatbot-input-container {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #eee;
+  padding: 10px;
+  background: white;
+}
+
+#chatbot-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+}
+
+#chatbot-send {
+  margin-left: 10px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 50%;
+  background: #ff5f6d;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#chatbot-send:hover {
+  background: #e14a53;
+}
+
+/* TOGGLE */
+#chatbot-toggle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #ff5f6d;
+  color: white;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
